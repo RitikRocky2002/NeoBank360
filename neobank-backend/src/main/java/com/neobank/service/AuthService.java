@@ -47,7 +47,7 @@ public class AuthService {
 			throw new RuntimeException("User is inactive");
 		}
 
-		String token = jwtUtil.generateToken(user.getEmail());
+		String token = jwtUtil.generateToken(user.getEmail(), user.getRole().toString());
 
 		return new AuthResponse(token);
 	}

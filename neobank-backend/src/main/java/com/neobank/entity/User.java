@@ -2,6 +2,7 @@ package com.neobank.entity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.neobank.enums.Role;
 
 import jakarta.persistence.Column;
@@ -33,7 +34,8 @@ public class User {
 
 	@Column(nullable = false, unique = true)
 	private String email;
-
+	
+	@JsonIgnore
 	@Column(name = "password_hash", nullable = false)
 	private String passwordHash;
 
